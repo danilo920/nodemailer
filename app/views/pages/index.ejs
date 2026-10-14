@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario_nodemailer</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+  <form action="/" method="post">
+      <h1>Contato</h1>
+      
+<div class="container-form">
+    <div class="Nome">
+    <p>Nome</p>
+    <input type="text" name="nome" id="nome" placeholder="Nome de usuáio">
+   </div>
+
+   <div class="Email">
+    <p>Email</p>
+    <input type="
+    " name="email" id="email" placeholder="seu@email.com">
+   </div>
+
+   <div class="Numero">
+    <p>Numero</p>
+    <input type="text" min="11" max="11" name="numero" id="numero" placeholder="XXXXXXX-XXXX">
+   </div>
+
+      <div class="Assunto">
+    <p>Assunto</p>
+    <input type="text"  name="assunto" id="assunto" placeholder="Assunto da mensagem"> 
+   </div>
+
+    <div class="Mensagem">
+    <p>Mensagem</p>
+    <input type="text"  name="mensagem" id="mensagem" placeholder="Escreva sua mensagem...">
+
+     <button type="submit">Enviar</button>
+  
+   </div>
+</div>
+
+
+<% if (erros && erros.length > 0) { %>
+<ul>
+<% erros.forEach(erro => { %>
+<li><%= erro.msg %></li>
+<% }) %>
+</ul>
+<% } %>
+
+
+</body>
+  

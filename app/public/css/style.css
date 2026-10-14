@@ -1,0 +1,40 @@
+h1{
+display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.Nome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Numero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Assunto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Mensagem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+

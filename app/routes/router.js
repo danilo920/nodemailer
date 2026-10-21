@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
 const dotenv = require('dotenv').config() ;
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
 
 router.get("/", (req, res) => {
    res.render("pages/index", { valores: {nome: "",email: "",numero: "",assunto: "", mensagem: ""
@@ -56,7 +56,7 @@ router.post("/", [
    res.send("Formulário enviado com sucesso!");
 
 let transporter = nodemailer.createTransport({
-    service: 'danilomelodevechi@gmail.com' , 
+    service: process.env.EMAIL_USER , 
     auth : {
         user : process.env.EMAIL_USER,
          user : process.env.EMAIL_PASS
@@ -71,11 +71,10 @@ let transporter = nodemailer.createTransport({
 })
 
 const mailOptions = {
-    to: "",
-    subject: "",
-    text: "",
-    html: ""
-
+    from: process.env.EMAIL_USER,
+    to: req.body.email,
+    subject:req.body.assunto,
+    text: req.body.mensagem,
 };
 
 transporter.sendMail(mailOptions, (error, info) =>{
